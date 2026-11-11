@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ContactForm, Header, Reveal } from './interactive';
+import { ContactForm, GlassMotion, Header, Reveal } from './interactive';
 
 const base = 'https://margroup.com.pk';
 const ventures = [
@@ -17,7 +17,7 @@ const pillars = [
 ];
 export default function Home() {
   return <>
-    <a className="skip" href="#main">Skip to content</a><Header/><Reveal/>
+    <a className="skip" href="#main">Skip to content</a><Header/><Reveal/><GlassMotion/>
     <main id="main">
       <section className="hero" id="top" aria-labelledby="hero-title">
         <div className="wrap hero-content">
@@ -27,7 +27,7 @@ export default function Home() {
           <div className="flex flex-wrap gap-3"><a className="btn primary" href="#businesses">Explore Our Businesses <span aria-hidden="true">↗</span></a><a className="btn outline" href="#contact">Let’s Talk <span aria-hidden="true">↗</span></a></div>
         </div>
         <div className="hero-lens" aria-hidden="true">
-          <div className="lens-image"><Image src="/hero.webp" alt="" fill priority sizes="(max-width: 700px) 85vw, 35vw"/></div><div className="lens-panel lens-panel-top"><span>MAR GROUP</span><i/></div>
+          <div className="lens-orbit"/><div className="lens-image"><Image src="/hero.webp" alt="" fill priority sizes="(max-width: 700px) 85vw, 35vw"/></div><div className="lens-panel lens-panel-top"><span>MAR GROUP</span><i/></div>
           <div className="lens-panel lens-panel-bottom"><span>Cloud &amp; IT</span><span>Consumer</span><span>Social impact</span></div>
         </div>
         <div className="wrap hero-bottom"><a href="#about"><span aria-hidden="true">↓</span> Explore the group</a><span>LAHORE, PAKISTAN</span></div>
