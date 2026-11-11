@@ -23,10 +23,11 @@ export default function Home() {
         <Image src="/hero.webp" alt="" fill priority sizes="100vw" className="hero-photo"/>
         <div className="wrap hero-content">
           <p className="eyebrow light">MAR GROUP OF COMPANIES</p>
-          <h1 id="hero-title">Building Businesses.<br/><span>Creating Digital Impact.</span></h1>
+          <h1 id="hero-title">Building<br className="hero-break"/> Businesses.<br/><span>Creating Digital Impact.</span></h1>
           <p className="hero-copy">MAR Group brings together innovative businesses, technology, and solutions to create meaningful opportunities and long-term growth.</p>
           <div className="flex flex-wrap gap-3"><a className="btn primary" href="#businesses">Explore Our Businesses <span aria-hidden="true">↗</span></a><a className="btn outline" href="#contact">Let’s Talk <span aria-hidden="true">↗</span></a></div>
         </div>
+        <div className="hero-lens" aria-hidden="true"><i/><i/><i/></div>
         <div className="wrap hero-bottom"><a href="#about"><span aria-hidden="true">↓</span> Explore the group</a><span>LAHORE, PAKISTAN</span></div>
       </section>
       <section className="section wrap about" id="about" data-reveal>
