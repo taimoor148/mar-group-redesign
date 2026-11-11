@@ -84,3 +84,30 @@ export function GlassMotion() {
   }, []);
   return null;
 }
+
+export function LoadingIntro() {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const image = document.querySelector<HTMLImageElement>('.lens-image img');
+    let disposed = false;
+    const finish = () => {
+      if (!disposed) setReady(true);
+    };
+    const deadline = window.setTimeout(finish, 1500);
+    if (image?.decode) void image.decode().then(finish, finish);
+    else finish();
+    return () => {
+      disposed = true;
+      window.clearTimeout(deadline);
+    };
+  }, []);
+
+  return <div className="loading-intro" data-ready={ready} aria-hidden="true">
+    <div className="loading-orbit">
+      <div className="loading-ring"/>
+      <div className="loading-mark">M</div>
+    </div>
+    <span className="loading-brand">MAR GROUP<small>OF COMPANIES</small></span>
+  </div>;
+}

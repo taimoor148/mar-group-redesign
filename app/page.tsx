@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ContactForm, GlassMotion, Header, Reveal } from './interactive';
+import { ContactForm, GlassMotion, Header, LoadingIntro, Reveal } from './interactive';
 
 const base = 'https://margroup.com.pk';
 const ventures = [
@@ -17,7 +17,7 @@ const pillars = [
 ];
 export default function Home() {
   return <>
-    <a className="skip" href="#main">Skip to content</a><Header/><Reveal/><GlassMotion/>
+    <a className="skip" href="#main">Skip to content</a><Header/><Reveal/><GlassMotion/><LoadingIntro/>
     <main id="main">
       <section className="hero" id="top" aria-labelledby="hero-title">
         <div className="wrap hero-content">
