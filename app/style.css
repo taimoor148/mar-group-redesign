@@ -258,3 +258,48 @@ footer .wordmark small{color:#c0dcea}
 @keyframes loading-ready{to{clip-path:inset(0 0 100% 0);visibility:hidden}}
 .loading-intro{clip-path:inset(0)}
 @media(prefers-reduced-motion:reduce){.loading-intro{display:none}}
+
+/* Corporate homepage */
+:root{--ink:#112b3d;--muted:#4b6472;--line:#cfdce3;--navy:#0a2234}
+body{background:#fbfdfe}
+.wrap{width:min(calc(100% - 120px),1320px)}
+.header{background:#f8fcfedf;border-color:#cddde5;box-shadow:none}
+.nav{height:76px}
+.nav-contact,.btn{font-weight:650}
+.hero{display:flex;min-height:clamp(640px,82svh,840px);padding:0;background:#091e2e;color:#fff}
+.hero::before{z-index:1;background:linear-gradient(90deg,#091e2e 18%,#091e2efa 32%,#091e2e69 70%,#091e2e22),linear-gradient(0deg,#091e2ed9,transparent 37%)}
+.hero-architecture{position:absolute;inset:0 0 0 27%;overflow:hidden}
+.hero-architecture img{object-fit:cover;object-position:70% 46%;animation:hero-in 1.5s ease-out both}
+.hero-content{padding:76px 0 105px}
+.hero h1{font-size:clamp(53px,6.8vw,106px);line-height:.98;letter-spacing:-.075em;max-width:1000px}
+.hero h1 span{color:#c1e7f3;font-weight:400}
+.hero .eyebrow,.hero-bottom a span{color:#b7e6f5}
+.hero-copy{color:#d1e1e9;max-width:510px}
+.hero-bottom{border-color:#a7c8d64d;color:#c4d8e4}
+.hero .btn.outline{color:#edfaff;background:#b9ecff15;border-color:#c8eeff6b;box-shadow:inset 0 1px #ffffff29}
+.hero .btn.outline:hover{background:#b9ecff32}
+.about{align-items:start;border-bottom:1px solid var(--line)}
+.about>div+div{padding-top:27px}
+.portfolio{background:#f2f8fb;border-block:0}
+.portfolio-layout{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(26px,6vw,90px);margin-top:40px}
+.portfolio-image{position:relative;min-height:440px;overflow:hidden;background:#143750}
+.portfolio-image img{object-fit:cover;object-position:48% 52%}
+.venture-list{border-top:1px solid #aabfc9}
+.venture-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px;padding:20px 0;border-bottom:1px solid #aabfc9;transition:padding .23s,background .23s}
+.venture-row:hover{padding-inline:12px;background:#e7f3f8}
+.venture-row h3{margin-bottom:4px;font-size:clamp(23px,2.6vw,35px)}
+.venture-row p:not(.category){margin-bottom:0!important;font-size:14px}
+.venture-row .category{margin-bottom:5px}
+.venture-arrow{display:grid;place-items:center;width:43px;height:43px;border:1px solid #99bbcc;border-radius:50%;color:#174e67;background:#fbfdfe;transition:background .2s,color .2s}
+.venture-arrow:hover{background:#194a62;color:#fff}
+.why{background:#0c283c;color:#f4fbff}
+.why .eyebrow,.contact .eyebrow{color:#a9ddec}
+.why .pillars p:not(.eyebrow){color:#d0e2eb!important}
+.pillars summary::after{background:#e9faff15;color:#d1f3ff;border-color:#86b5cb66}
+.project-image{border-radius:6px}
+.contact{background:#eaf5f9}
+.contact .eyebrow{color:#226480}
+.contact-form{border-radius:12px;box-shadow:0 12px 36px #1c4f6615}
+footer{background:#081f30}
+@media(max-width:1000px){.wrap{width:calc(100% - 64px)}.hero h1{max-width:100%}}
+@media(max-width:760px){.wrap{width:calc(100% - 36px)}.nav{height:64px}.hero{min-height:650px}.hero-content{padding-block:64px 95px}.hero-architecture{inset:0}.hero::before{background:linear-gradient(90deg,#091e2ef5,#091e2ea5),linear-gradient(0deg,#091e2ed9,transparent 42%)}.hero h1{font-size:clamp(45px,9vw,70px)}.about>div+div{padding-top:0}.portfolio-layout{grid-template-columns:1fr}.portfolio-image{min-height:230px}}

@@ -57,39 +57,11 @@ export function ContactForm() {
   </form>;
 }
 
-export function GlassMotion() {
-  useEffect(() => {
-    const hero = document.querySelector<HTMLElement>('.hero');
-    if (!hero || !matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)').matches) return;
-    function move(event: PointerEvent) {
-      const target = event.currentTarget as HTMLElement;
-      const bounds = target.getBoundingClientRect();
-      const x = (event.clientX - bounds.left) / bounds.width;
-      const y = (event.clientY - bounds.top) / bounds.height;
-      target.style.setProperty('--light-x', `${x * 100}%`);
-      target.style.setProperty('--light-y', `${y * 100}%`);
-      target.style.setProperty('--tilt-x', `${(0.5 - y) * 7}deg`);
-      target.style.setProperty('--tilt-y', `${(x - 0.5) * 9}deg`);
-    }
-    function reset(event: PointerEvent) {
-      const target = event.currentTarget as HTMLElement;
-      for (const property of ['--light-x', '--light-y', '--tilt-x', '--tilt-y']) target.style.removeProperty(property);
-    }
-    hero.addEventListener('pointermove', move);
-    hero.addEventListener('pointerleave', reset);
-    return () => {
-      hero.removeEventListener('pointermove', move);
-      hero.removeEventListener('pointerleave', reset);
-    };
-  }, []);
-  return null;
-}
-
 export function LoadingIntro() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const image = document.querySelector<HTMLImageElement>('.lens-image img');
+    const image = document.querySelector<HTMLImageElement>('.hero-architecture img');
     let disposed = false;
     const finish = () => {
       if (!disposed) setReady(true);

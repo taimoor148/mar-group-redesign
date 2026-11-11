@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import { ContactForm, GlassMotion, Header, LoadingIntro, Reveal } from './interactive';
+import { ContactForm, Header, LoadingIntro, Reveal } from './interactive';
 
 const base = 'https://margroup.com.pk';
 const ventures = [
-  { name: 'Spixhost', category: 'Cloud & IT', icon: '◈', text: 'Cloud hosting, business email and digital infrastructure for organizations.', href: 'https://spixhost.com/' },
-  { name: 'ZING Pakistan', category: 'Consumer & e-commerce', icon: '✳', text: 'A Pakistani fragrance brand offering perfumes, ouds and gift collections.', href: 'https://zing.pk/pages/the-zing-story' },
-  { name: 'MAR Foundation', category: 'Social impact', icon: '✦', text: 'The group’s charitable initiative, supported by ZING Pakistan.', href: 'https://zing.pk/pages/the-zing-story' },
-  { name: 'Birdagents', category: 'Pet retail', icon: '↗', text: 'A Lahore-based retailer of bird supplies, pet food and accessories.', href: 'https://birdagents.pk/pages/about-us' },
+  { name: 'Spixhost', category: 'Cloud & IT', text: 'Cloud hosting, business email and digital infrastructure for organizations.', href: 'https://spixhost.com/' },
+  { name: 'ZING Pakistan', category: 'Consumer & e-commerce', text: 'A Pakistani fragrance brand offering perfumes, ouds and gift collections.', href: 'https://zing.pk/pages/the-zing-story' },
+  { name: 'MAR Foundation', category: 'Social impact', text: 'The group’s charitable initiative, supported by ZING Pakistan.', href: 'https://zing.pk/pages/the-zing-story' },
+  { name: 'Birdagents', category: 'Pet retail', text: 'A Lahore-based retailer of bird supplies, pet food and accessories.', href: 'https://birdagents.pk/pages/about-us' },
 ];
 const pillars = [
   ['Business Innovation', 'Innovation and collaboration are among the group’s stated values.'],
@@ -17,18 +17,17 @@ const pillars = [
 ];
 export default function Home() {
   return <>
-    <a className="skip" href="#main">Skip to content</a><Header/><Reveal/><GlassMotion/><LoadingIntro/>
+    <a className="skip" href="#main">Skip to content</a><Header/><Reveal/><LoadingIntro/>
     <main id="main">
       <section className="hero" id="top" aria-labelledby="hero-title">
         <div className="wrap hero-content">
           <p className="eyebrow light">MAR GROUP OF COMPANIES</p>
-          <h1 id="hero-title">Building<br className="hero-break"/> Businesses.<br/><span>Creating Digital Impact.</span></h1>
+          <h1 id="hero-title">Building Businesses.<br/><span>Creating Digital Impact.</span></h1>
           <p className="hero-copy">MAR Group brings together innovative businesses, technology, and solutions to create meaningful opportunities and long-term growth.</p>
           <div className="flex flex-wrap gap-3"><a className="btn primary" href="#businesses">Explore Our Businesses <span aria-hidden="true">↗</span></a><a className="btn outline" href="#contact">Let’s Talk <span aria-hidden="true">↗</span></a></div>
         </div>
-        <div className="hero-lens" aria-hidden="true">
-          <div className="lens-orbit"/><div className="lens-image"><Image src="/hero.webp" alt="" fill priority sizes="(max-width: 700px) 85vw, 35vw"/></div><div className="lens-panel lens-panel-top"><span>MAR GROUP</span><i/></div>
-          <div className="lens-panel lens-panel-bottom"><span>Cloud &amp; IT</span><span>Consumer</span><span>Social impact</span></div>
+        <div className="hero-architecture">
+          <Image src="/hero.webp" alt="" fill priority sizes="(max-width: 760px) 100vw, 65vw"/>
         </div>
         <div className="wrap hero-bottom"><a href="#about"><span aria-hidden="true">↓</span> Explore the group</a><span>LAHORE, PAKISTAN</span></div>
       </section>
@@ -38,10 +37,13 @@ export default function Home() {
       </section>
       <section className="section portfolio" id="businesses"><div className="wrap" data-reveal>
         <p className="eyebrow">OUR PORTFOLIO</p><h2>Meet our businesses.</h2>
-        <div className="venture-grid">{ventures.map(v => <article key={v.name} className="venture">
-          <span className="venture-icon" aria-hidden="true">{v.icon}</span><p className="category">{v.category}</p><h3>{v.name}</h3><p>{v.text}</p>
-          <a className="text-link" aria-label={`Explore ${v.name}`} href={v.href}>Explore <span aria-hidden="true">↗</span></a>
-        </article>)}</div>
+        <div className="portfolio-layout">
+          <div className="portfolio-image"><Image src="/cloud.webp" alt="" fill sizes="(max-width: 760px) 100vw, 40vw"/></div>
+          <div className="venture-list">{ventures.map(v => <article key={v.name} className="venture-row">
+            <div><p className="category">{v.category}</p><h3>{v.name}</h3><p>{v.text}</p></div>
+            <a className="venture-arrow" aria-label={`Explore ${v.name}`} href={v.href}>↗</a>
+          </article>)}</div>
+        </div>
       </div></section>
       <section className="section why" id="approach"><div className="wrap split" data-reveal>
         <div><p className="eyebrow light">WHY MAR GROUP</p><h2>How we work.</h2><a className="text-link" href={base + '/how-we-do/'}>See our approach <span aria-hidden="true">↗</span></a></div>
