@@ -104,10 +104,9 @@ export function LoadingIntro() {
   }, []);
 
   return <div className="loading-intro" data-ready={ready} aria-hidden="true">
-    <div className="loading-orbit">
-      <div className="loading-ring"/>
-      <div className="loading-mark">M</div>
+    <div className="loading-lockup">
+      <span className="loading-brand">MAR GROUP<small>OF COMPANIES</small></span>
+      <span className="loading-rule"/>
     </div>
-    <span className="loading-brand">MAR GROUP<small>OF COMPANIES</small></span>
   </div>;
 }

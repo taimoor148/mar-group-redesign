@@ -233,27 +233,28 @@ footer .wordmark small{color:#c0dcea}
 
 .loading-intro{
   position:fixed;inset:0;z-index:10;pointer-events:none;
-  display:grid;place-content:center;justify-items:center;gap:24px;
-  background:radial-gradient(ellipse at 50% 45%,#fafdff 8%,#d9f3fc 47%,#a8d9e9);
-  animation:loading-dismiss .5s cubic-bezier(.22,.61,.36,1) 1.6s forwards;
+  display:grid;place-items:center;
+  background:#0c2b40;
+  animation:loading-exit .58s cubic-bezier(.76,0,.24,1) 1.5s forwards;
 }
-.loading-intro[data-ready=true]{animation-name:loading-complete;animation-delay:.12s}
-.loading-orbit{position:relative;width:124px;height:124px;display:grid;place-items:center}
-.loading-ring{
-  position:absolute;inset:0;border-radius:50%;border:1px solid #6daec8a0;
-  background:conic-gradient(from 30deg,transparent 48%,#5daec64f 71%,#fcffff 93%,transparent);
-  mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));
-  animation:loading-spin 1s linear infinite;
+.loading-intro[data-ready=true]{animation-name:loading-ready;animation-delay:.08s}
+.loading-lockup{width:min(68vw,290px);overflow:hidden}
+.loading-brand{
+  display:block;color:#f2fbff;font-weight:650;font-size:clamp(25px,5vw,38px);
+  letter-spacing:.14em;line-height:1.05;white-space:nowrap;
+  animation:loading-type .42s cubic-bezier(.2,.8,.2,1) both;
 }
-.loading-mark{
-  display:grid;place-items:center;width:77px;height:77px;border-radius:23px;border:1px solid #f5feff;
-  color:#153d54;background:linear-gradient(148deg,#fff,#b4e5f4 65%,#82c8e0);
-  box-shadow:inset 0 1px 2px #fff,inset 0 -1px 4px #20698645,0 14px 35px #28638032;
-  font-size:41px;font-weight:750;line-height:1;
+.loading-brand small{
+  display:block;margin-top:9px;color:#b2d7e6;
+  font-size:9px;font-weight:650;letter-spacing:.34em;
 }
-.loading-brand{color:#12394f;text-align:center;font-size:15px;font-weight:800;letter-spacing:.2em;line-height:1.2}
-.loading-brand small{display:block;color:#3d6378;font-size:8px;letter-spacing:.27em;margin-top:6px}
-@keyframes loading-spin{to{transform:rotate(360deg)}}
-@keyframes loading-dismiss{to{opacity:0;visibility:hidden}}
-@keyframes loading-complete{to{opacity:0;visibility:hidden}}
+.loading-rule{
+  display:block;height:1px;margin-top:19px;background:#b4e8f5;
+  transform-origin:left;animation:loading-line .56s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes loading-type{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes loading-line{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes loading-exit{to{clip-path:inset(0 0 100% 0);visibility:hidden}}
+@keyframes loading-ready{to{clip-path:inset(0 0 100% 0);visibility:hidden}}
+.loading-intro{clip-path:inset(0)}
 @media(prefers-reduced-motion:reduce){.loading-intro{display:none}}
